@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "webHookType": "github",
+      "name": "req"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "queue",
+      "name": "outputQueueItem",
+      "queueName": "gitupdates",
+      "connection": "YottaCIDataStorage",
+      "direction": "out"
+    },
+    {
+      "type": "queue",
+      "name": "installationQueueItem",
+      "queueName": "installationevents",
+      "connection": "YottaCIDataStorage",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
